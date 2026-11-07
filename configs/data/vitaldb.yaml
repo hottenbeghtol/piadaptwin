@@ -1,0 +1,7 @@
+name: vitaldb
+source: vitaldb
+url: https://vitaldb.net/dataset/
+license: CC BY 4.0
+fs: 500
+n_cases: 6388
+split: [0.7, 0.15, 0.15]

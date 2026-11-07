@@ -1,0 +1,3 @@
+name: ablation_no_sdn_coupling
+out_dir: runs/ablation_no_sdn_coupling
+use_neural_coupling: false

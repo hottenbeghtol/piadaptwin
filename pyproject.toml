@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piadaptwin"
+version = "0.1.0"
+description = "Physics-informed adaptive digital twin for precision anesthesia monitoring"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = [
+    "digital-twin",
+    "physics-informed",
+    "anesthesia",
+    "windkessel",
+    "neural-ode",
+    "bayesian-adaptation",
+]
+dependencies = [
+    "torch>=2.2",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "pyrallis>=0.3.1",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+export = ["onnx>=1.15"]
+dev = [
+    "ruff",
+    "black",
+    "isort",
+    "mypy",
+    "pytest",
+    "pre-commit",
+]
+
+[project.scripts]
+piadaptwin = "piadaptwin.console:main"
+
+[tool.setuptools.packages.find]
+include = ["piadaptwin*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["piadaptwin"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["B008", "SIM108"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["piadaptwin"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = false
+disallow_untyped_calls = false
+disallow_any_generics = false
+ignore_missing_imports = true
+files = ["piadaptwin"]
+
+[[tool.mypy.overrides]]
+module = ["pyrallis", "pyrallis.*"]
+follow_imports = "skip"
+implicit_reexport = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]

@@ -1,0 +1,4 @@
+name: supplementary_interval_30s
+out_dir: runs/supplementary_interval_30s
+governor:
+  update_interval: 30.0

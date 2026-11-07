@@ -1,0 +1,4 @@
+name: supplementary_alpha_020
+out_dir: runs/supplementary_alpha_020
+loss:
+  alpha: 0.20

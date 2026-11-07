@@ -1,0 +1,3 @@
+name: ablation_static_theta
+out_dir: runs/ablation_static_theta
+use_bayesadapt: false

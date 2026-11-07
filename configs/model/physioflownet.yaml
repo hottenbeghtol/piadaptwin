@@ -1,0 +1,12 @@
+in_channels: 4
+enc_layers: 3
+enc_filters: 64
+kernel: 7
+hidden: 64
+deriv_layers: 4
+state_dim: 4
+grid_points: 12
+window_seconds: 120.0
+horizons: [30, 60, 120]
+rtol: 0.001
+atol: 0.0001

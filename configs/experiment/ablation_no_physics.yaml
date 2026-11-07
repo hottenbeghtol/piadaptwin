@@ -1,0 +1,4 @@
+name: ablation_no_physics
+out_dir: runs/ablation_no_physics
+use_windkessel: false
+use_pkpd: false

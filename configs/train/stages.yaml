@@ -1,0 +1,8 @@
+stage1_epochs: 50
+stage2_epochs: 20
+stage3_epochs: 10
+stage1_lr: 0.0003
+stage3_lr: 0.00005
+weight_decay: 0.00001
+grad_clip: 1.0
+seeds: [42, 137, 271]

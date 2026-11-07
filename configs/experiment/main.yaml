@@ -1,0 +1,69 @@
+name: main
+device: auto
+seed: 42
+out_dir: runs/main
+use_windkessel: true
+use_pkpd: true
+use_spectral: true
+use_bayesadapt: true
+use_neural_coupling: true
+flow:
+  in_channels: 4
+  samples_per_window: 240
+  enc_layers: 3
+  enc_filters: 64
+  kernel: 7
+  hidden: 64
+  deriv_layers: 4
+  state_dim: 4
+  grid_points: 12
+  window_seconds: 120.0
+  horizons: [30, 60, 120]
+  rtol: 0.001
+  atol: 0.0001
+pkpd:
+  e0: 97.4
+  emax: 92.4
+  hill_n: 1.43
+  ec50: 3.08
+meter:
+  bis_samples: 120
+  stft_window: 8
+  stft_hop: 2
+  n_bands: 5
+  patch_seconds: 10
+  embed_dim: 128
+  n_heads: 4
+  depth: 2
+  horizons: [30, 60, 120]
+governor:
+  n_params: 7
+  update_interval: 15.0
+  eps_sigma: 0.0001
+  noise_scale: 0.01
+  n_samples: 4
+  lr: 0.005
+  steps: 1
+loss:
+  alpha: 0.12
+  beta: 0.03
+  lambda_bis: 0.4
+  mu: 0.08
+  mu_missing: 0.01
+data:
+  source: vitaldb
+  fs: 500
+  window_seconds: 120.0
+  samples_per_window: 240
+  batch_size: 128
+  n_cases: 6388
+  split: [0.7, 0.15, 0.15]
+stages:
+  stage1_epochs: 50
+  stage2_epochs: 20
+  stage3_epochs: 10
+  stage1_lr: 0.0003
+  stage3_lr: 0.00005
+  weight_decay: 0.00001
+  grad_clip: 1.0
+  seeds: [42, 137, 271]

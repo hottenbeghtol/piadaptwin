@@ -1,0 +1,5 @@
+name: supplementary_mimic_transfer
+out_dir: runs/supplementary_mimic_transfer
+data:
+  source: mimic3
+  manifest: ""

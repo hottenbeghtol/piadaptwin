@@ -1,0 +1,4 @@
+name: ablation_beta0
+out_dir: runs/ablation_beta0
+loss:
+  beta: 0.0

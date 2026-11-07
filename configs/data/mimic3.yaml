@@ -1,0 +1,7 @@
+name: mimic3
+source: mimic3
+url: https://physionet.org/content/mimic3wdb/
+license: ODbL v1.0
+fs: 125
+n_cases: 3247
+split: [0.75, 0.10, 0.15]
